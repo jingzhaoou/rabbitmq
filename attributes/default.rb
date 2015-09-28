@@ -63,7 +63,7 @@ default['rabbitmq']['clustering']['use_auto_clustering'] = false
 default['rabbitmq']['clustering']['cluster_name'] = 'gowall'
 default['rabbitmq']['clustering']['cluster_nodes'] = [
     { :name => 'rabbit@rabbit1', :type => 'disc' },
-    { :name => 'rabbit@rabbit2', :type => 'disc' }
+    { :name => 'rabbit@rabbit2', :type => 'disc' },
     { :name => 'rabbit@rabbit3', :type => 'disc' }
 ]
 
