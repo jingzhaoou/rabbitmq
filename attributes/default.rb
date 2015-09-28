@@ -60,8 +60,12 @@ default['rabbitmq']['erlang_cookie'] = 'AnyAlphaNumericStringWillDo'
 default['rabbitmq']['cluster_partition_handling'] = 'ignore'
 
 default['rabbitmq']['clustering']['use_auto_clustering'] = false
-default['rabbitmq']['clustering']['cluster_name'] = nil
-default['rabbitmq']['clustering']['cluster_nodes'] = []
+default['rabbitmq']['clustering']['cluster_name'] = 'gowall'
+default['rabbitmq']['clustering']['cluster_nodes'] = [
+    { :name => 'rabbit@rabbit1', :type => 'disc' },
+    { :name => 'rabbit@rabbit2', :type => 'disc' }
+    { :name => 'rabbit@rabbit3', :type => 'disc' }
+]
 
 # Manual clustering
 # - Node type : master | slave
