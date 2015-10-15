@@ -63,7 +63,7 @@ action :set do
     else
       cmd << " #{new_resource.priority}" if new_resource.priority
     end
-
+    Chef::Log.info "**** Policy Command: #{cmd}."
     execute "set_policy #{new_resource.policy}" do
       command cmd
     end
