@@ -144,10 +144,14 @@ end
 default['rabbitmq']['heartbeat'] = 580
 
 # Example HA policies
+default['rabbitmq']['policies']['HA']['vhost'] = 'oikdjbyk'
+default['rabbitmq']['policies']['HA']['apply_to'] = 'queues'
 default['rabbitmq']['policies']['HA']['pattern'] = '^(?!amq\\.).*'
 default['rabbitmq']['policies']['HA']['params'] = { 'ha-sync-mode' => 'automatic', 'ha-mode' => 'all', 'message-ttl' => 1800000 }
 default['rabbitmq']['policies']['HA']['priority'] = -10
 
+default['rabbitmq']['policies']['Expire']['vhost'] = 'oikdjbyk'
+default['rabbitmq']['policies']['Expire']['apply_to'] = 'queues'
 default['rabbitmq']['policies']['Expire']['pattern'] = "^(?!stomp-subscription-\\.).*"
 default['rabbitmq']['policies']['Expire']['params'] = { 'expires' => 1800000 }
 default['rabbitmq']['policies']['Expire']['priority'] = -9
