@@ -40,7 +40,8 @@ action :set do
   unless policy_exists?(new_resource.vhost, new_resource.policy)
     cmd = 'rabbitmqctl set_policy'
     cmd << " -p #{new_resource.vhost}" unless new_resource.vhost.nil?
-    cmd << " --apply-to #{new_resource.apply_to}" if new_resource.apply_to
+    # cmd << " --apply-to #{new_resource.apply_to}" if new_resource.apply_to
+    cmd << " --apply-to queues"
     cmd << " #{new_resource.policy}"
     cmd << " \"#{new_resource.pattern}\""
     cmd << " '{"
