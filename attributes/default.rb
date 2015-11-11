@@ -153,7 +153,7 @@ default['rabbitmq']['policies']['HA']['priority'] = -10
 default['rabbitmq']['policies']['Expire']['vhost'] = 'oikdjbyk'
 default['rabbitmq']['policies']['Expire']['apply_to'] = 'queues'
 default['rabbitmq']['policies']['Expire']['pattern'] = "^(?!stomp-subscription-\\.).*"
-default['rabbitmq']['policies']['Expire']['params'] = { 'expires' => 1800000 }
+default['rabbitmq']['policies']['Expire']['params'] = { 'ha-sync-mode' => 'automatic', 'ha-mode' => 'all', 'expires' => 1800000 }
 default['rabbitmq']['policies']['Expire']['priority'] = -9
 
 default['rabbitmq']['disabled_policies'] = []
