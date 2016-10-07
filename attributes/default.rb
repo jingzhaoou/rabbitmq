@@ -57,7 +57,7 @@ default['rabbitmq']['kernel']['inet_dist_use_interface'] = nil
 default['rabbitmq']['cluster'] = true
 default['rabbitmq']['cluster_disk_nodes'] = []
 default['rabbitmq']['erlang_cookie'] = 'AnyAlphaNumericStringWillDo'
-default['rabbitmq']['cluster_partition_handling'] = 'ignore'
+default['rabbitmq']['cluster_partition_handling'] = 'pause_minority'
 
 default['rabbitmq']['clustering']['use_auto_clustering'] = false
 default['rabbitmq']['clustering']['cluster_name'] = 'gowall'
